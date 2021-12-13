@@ -23,11 +23,9 @@ function App() {
     (state) => state.dashboard.interval
   );
 
-  const queryParams = {
-    namespace: "production",
-    startDate: startDateUnix,
-    endDate: endDateUnix,
-  };
+
+  const queryParams = {namespace: namespaces.currentlySelected, startDate: startDateUnix, endDate: endDateUnix}
+
 
   const podFetch = useGetPodsQuery(queryParams);
   const cpuUsageFetch = useGetCpuUsageQuery(queryParams);
