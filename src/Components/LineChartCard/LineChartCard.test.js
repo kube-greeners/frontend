@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import store from "../../redux/store";
 import { Provider } from "react-redux";
 
-test("matches snapshot", () => {
+test("matches LineChartCard snapshot", () => {
   const currentlyShowing = "production";
   const dataFetching = {
     status: "pending",
@@ -21,11 +21,14 @@ test("matches snapshot", () => {
     isError: false,
     isFetching: true,
   };
+
   const tree = renderer
     .create(
       <Provider store={store}>
-        <LineChartCard currentlyShowing={currentlyShowing}
-        dataFetching={dataFetching} />
+        <LineChartCard
+          currentlyShowing={currentlyShowing}
+          dataFetching={dataFetching}
+        />
       </Provider>
     )
     .toJSON();
