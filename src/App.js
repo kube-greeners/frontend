@@ -15,7 +15,7 @@ import {
   useGetSavedEmissionQuery,
 } from "./redux/apiSlice";
 import Selectors from "./Components/Selectors/Selectors";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 const queryParams = { namespace: "production", interval: "5d", step: "1h" };
 
