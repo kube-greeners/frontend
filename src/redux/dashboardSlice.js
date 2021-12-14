@@ -18,10 +18,8 @@ const initialState = {
     resources: {
       currentlySelected: "Estimated CO2 emission",
       data: [
-        "CPU allocation",
         "CPU usage",
         "Memory usage",
-        "Memory allocation",
         "Active pods",
         "Estimated CO2 emission",
       ],
@@ -44,8 +42,9 @@ export const dashboardSlice = createSlice({
       state.selects.resources.currentlySelected = action.payload;
     },
     setCurrentInterval: (state, action) => {
-      state.interval.startDate = Number(new Date(action.payload[0]));
-      state.interval.endDate = Number(new Date(action.payload[1]));
+      const [day, month, year] = action.payload[0].split("/");
+      state.interval.startDateUnix = Number(new Date(year, month - 1, day));
+      // state.interval.endDateUnix = Number(new Date(action.payload[1]))
     },
   },
 });

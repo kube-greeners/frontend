@@ -17,10 +17,17 @@ import {
 import Selectors from "./Components/Selectors/Selectors";
 import { useRef } from "react";
 
-const queryParams = { namespace: "production", interval: "5d", step: "1h" };
-
 function App() {
   const { resources } = useSelector((state) => state.dashboard.selects);
+  const { startDateUnix, endDateUnix } = useSelector(
+    (state) => state.dashboard.interval
+  );
+
+  const queryParams = {
+    namespace: "production",
+    startDate: startDateUnix,
+    endDate: endDateUnix,
+  };
 
   const podFetch = useGetPodsQuery(queryParams);
   const cpuUsageFetch = useGetCpuUsageQuery(queryParams);
@@ -28,10 +35,7 @@ function App() {
   const memoryUsageFetch = useGetMemoryUsageQuery(queryParams);
   const memoryAllocationFetch = useGetMemoryAllocationQuery(queryParams);
   const co2EmissionQuery = useGetCO2EmissionQuery(queryParams);
-  const savedEmissionFetch = useGetSavedEmissionQuery({
-    interval: queryParams.interval,
-    step: queryParams.step,
-  });
+  const savedEmissionFetch = useGetSavedEmissionQuery(queryParams);
 
   const modalIsOpen = useRef(false);
 
