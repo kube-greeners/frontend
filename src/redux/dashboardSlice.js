@@ -6,8 +6,9 @@ const twoWeeksAgo = Number(new Date()) - 12096e5;
 const initialState = {
   selects: {
     namespaces: {
-      currentlySelected: "production",
+      currentlySelected: 'All namespaces',
       data: [
+      "All namespaces",
       "backend",
       "bizdev",
       "cert-manager",
@@ -19,7 +20,6 @@ const initialState = {
       "kube-system",
       "monitoring",
       "postprod",
-      "production",
       "staging"
       ]
     },
