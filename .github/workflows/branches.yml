@@ -48,7 +48,7 @@ jobs:
 
       - name: Validate build is <1 Mb
         run: |
-          - bash -c 'if [ $(du -k build.tar.gz | cut -f 1) -ge 1024 ]; then echo "Size is over 1024 Kb, this is toooooo much";exit -1; else echo "Size is good"; fi'
+          bash -c 'if [ $(du -k build.tar.gz | cut -f 1) -ge 1024 ]; then echo "Size is over 1024 Kb, this is toooooo much";exit -1; else echo "Size is good"; fi'
 
       # Setup gcloud CLI
       - name: Setup GCloud CLI
