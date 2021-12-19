@@ -1,13 +1,13 @@
-import StatComponent from "./StatComponent";
+import Selectors from "./Selectors";
 import renderer from "react-test-renderer";
 import store from "../../redux/store";
 import { Provider } from "react-redux";
 
-test("matches StatComponent snapshot", () => {
+test("matches Selectors snapshot", () => {
   const tree = renderer
     .create(
       <Provider store={store}>
-        <StatComponent />
+        <Selectors />
       </Provider>
     )
     .toJSON();

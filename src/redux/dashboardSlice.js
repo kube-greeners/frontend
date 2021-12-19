@@ -1,13 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-const todaysDate = Number(new Date())
-const twoWeeksAgo = Number(new Date()) - 12096e5 
-
+const todaysDate = Number(new Date());
+const twoWeeksAgo = Number(new Date()) - 12096e5;
 
 const initialState = {
   selects: {
     namespaces: {
-      currentlySelected: 'production',
+      currentlySelected: "production",
       data: [
       "backend",
       "bizdev",
@@ -25,19 +24,19 @@ const initialState = {
       ]
     },
     resources: {
-      currentlySelected: 'Estimated CO2 emission',
+      currentlySelected: "Estimated CO2 emission",
       data: [
-        'CPU usage',
-        'Memory usage',
-        'Active pods',
-        'Estimated CO2 emission',
-      ]
+        "CPU usage",
+        "Memory usage",
+        "Active pods",
+        "Estimated CO2 emission",
+      ],
     },
   },
   interval: {
     startDateUnix: twoWeeksAgo,
-    endDateUnix: todaysDate
-  }
+    endDateUnix: todaysDate,
+  },
 };
 
 export const dashboardSlice = createSlice({
@@ -45,10 +44,10 @@ export const dashboardSlice = createSlice({
   initialState,
   reducers: {
     setCurrentlySelectedNamespace: (state, action) => {
-      state.selects.namespaces.currentlySelected = action.payload
+      state.selects.namespaces.currentlySelected = action.payload;
     },
     setCurrentlySelectedResource: (state, action) => {
-      state.selects.resources.currentlySelected = action.payload
+      state.selects.resources.currentlySelected = action.payload;
     },
     setCurrentInterval: (state, action) => {
       const [day,month,year] = action.payload[0].split("/")
@@ -57,9 +56,12 @@ export const dashboardSlice = createSlice({
       state.interval.endDateUnix = Number(new Date(endYear, endMonth-1, endDay))
     }
   },
+});
 
-})
-
-export const { setCurrentlySelectedNamespace,setCurrentlySelectedResource, setCurrentInterval } = dashboardSlice.actions
+export const {
+  setCurrentlySelectedNamespace,
+  setCurrentlySelectedResource,
+  setCurrentInterval,
+} = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

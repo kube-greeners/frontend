@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches LoadingSpinner snapshot 1`] = `
+<div
+  className="lds"
+>
+  <div />
+  <div />
+  <div />
+  <div />
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;
