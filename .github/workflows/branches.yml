@@ -27,7 +27,7 @@ jobs:
           npm run build
         env:
           REACT_APP_API_BASE_URL: "../"
-          # GENERATE_SOURCEMAP: "false"
+          GENERATE_SOURCEMAP: "false"
           PUBLIC_URL: "/${{ env.name }}/"
 
       - name: Test the build
