@@ -18,16 +18,18 @@ import Selectors from "./Components/Selectors/Selectors";
 import { useRef } from "react";
 
 function App() {
-  const { resources } = useSelector((state) => state.dashboard.selects);
+  const { resources,namespaces } = useSelector((state) => state.dashboard.selects);
   const { startDateUnix, endDateUnix } = useSelector(
     (state) => state.dashboard.interval
   );
 
+
   const queryParams = {
-    namespace: "production",
-    startDate: startDateUnix,
-    endDate: endDateUnix,
-  };
+    namespace: namespaces.currentlySelected === 'All namespaces' ? null : namespaces.currentlySelected, 
+    startDate: startDateUnix, 
+    endDate: endDateUnix
+  }
+
 
   const podFetch = useGetPodsQuery(queryParams);
   const cpuUsageFetch = useGetCpuUsageQuery(queryParams);
@@ -80,15 +82,14 @@ function App() {
           <StatComponent
             gridArea="b1"
             title="Saved Emission"
-            loaded1={savedEmissionFetch.isSuccess}
-            stat1={savedEmissionFetch.data}
-            unit={"grams"}
+            loaded1={!savedEmissionFetch.isFetching}
+            stat1={savedEmissionFetch.data} unit={'grams'}
           />
           <StatComponent
             gridArea="b2"
             title="CPU Usage and Allocation"
-            loaded1={cpuAllocationFetch.isSuccess}
-            loaded2={cpuUsageFetch.isSuccess}
+            loaded1={!cpuAllocationFetch.isFetching}
+            loaded2={!cpuUsageFetch.isFetching}
             stat1={cpuAllocationFetch.data?.currentValue}
             stat2={cpuUsageFetch.data?.currentValue}
             unit={"core"}
@@ -96,16 +97,14 @@ function App() {
           <StatComponent
             gridArea="b3"
             title="Memory Usage  and Allocation"
-            loaded1={memoryAllocationFetch.isSuccess}
-            loaded2={memoryUsageFetch.isSuccess}
-            stat1={memoryAllocationFetch.data?.currentValue}
-            stat2={memoryUsageFetch.data?.currentValue}
-            unit={"GB"}
+            loaded1={!memoryAllocationFetch.isFetching}
+            loaded2={!memoryUsageFetch.isFetching} stat1={memoryAllocationFetch.data?.currentValue}
+            stat2={memoryUsageFetch.data?.currentValue} unit={'GB'}
           />
           <StatComponent
             gridArea="b4"
             title="N Active Pod"
-            loaded1={podFetch.isSuccess}
+            loaded1={!podFetch.isFetching}
             stat1={podFetch.data?.currentValue}
           />
         </div>
