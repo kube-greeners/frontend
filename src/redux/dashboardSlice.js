@@ -7,22 +7,6 @@ const initialState = {
   selects: {
     namespaces: {
       currentlySelected: 'All namespaces',
-      data: [
-      "All namespaces",
-      "backend",
-      "bizdev",
-      "cert-manager",
-      "default",
-      "frontend",
-      "kube-green",
-      "kube-node-lease",
-      "kube-public",
-      "kube-system",
-      "monitoring",
-      "postprod",
-      "production",
-      "staging"
-      ]
     },
     resources: {
       currentlySelected: "Estimated CO2 emission",
