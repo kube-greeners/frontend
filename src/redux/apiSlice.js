@@ -24,6 +24,12 @@ function convertData(resData, xAxisName) {
   };
 }
 
+function extractNamespaceName(resData) {
+  const namespaces = resData.map(d => d.metric.namespace) 
+  namespaces.push("All namespaces")
+  return namespaces;
+
+}
 
 //Add namespace to query parameters if it is present, otherwise don't
 function createQueryparams(ns,sd,ed) {
@@ -69,6 +75,11 @@ export const apiSlice = createApi({
         return parseFloat(resData[0].values.pop().pop())
       }
     }),
+    getNameSpaces: builder.query({
+      query: ({ startDate, endDate }) =>
+        `/namespace_names?start=${startDate}&end=${endDate}`,
+      transformResponse: (resData) => extractNamespaceName(resData),
+    })
   }),
 });
 
@@ -80,4 +91,5 @@ export const {
   useGetMemoryUsageQuery,
   useGetMemoryAllocationQuery,
   useGetSavedEmissionQuery,
+  useGetNameSpacesQuery,
 } = apiSlice;

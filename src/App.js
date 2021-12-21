@@ -39,6 +39,7 @@ function App() {
   const co2EmissionQuery = useGetCO2EmissionQuery(queryParams);
   const savedEmissionFetch = useGetSavedEmissionQuery(queryParams);
 
+
   const modalIsOpen = useRef(false);
 
   const fetchingMap = {
@@ -48,7 +49,7 @@ function App() {
     "Memory usage": memoryUsageFetch,
     "Memory allocation": memoryAllocationFetch,
     "Estimated CO2 emission": co2EmissionQuery,
-    "Saved Emission": savedEmissionFetch,
+    "Saved emission": savedEmissionFetch,
   };
 
   const allFetchesDone = Object.values(fetchingMap).every((f) => !f.isFetching);
