@@ -82,9 +82,9 @@ exports[`matches Selectors snapshot 1`] = `
         </span>
         <span
           className="ant-select-selection-item"
-          title="production"
+          title="All namespaces"
         >
-          production
+          All namespaces
         </span>
       </div>
       <span

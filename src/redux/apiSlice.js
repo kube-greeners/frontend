@@ -35,57 +35,52 @@ function extractNamespaceName(resData) {
 
 }
 
+//Add namespace to query parameters if it is present, otherwise don't
+function createQueryparams(ns,sd,ed) {
+  return ns ? 
+    `?namespace=${ns}&start=${sd}&end=${ed}`:
+    `?start=${sd}&end=${ed}`
+}
+
+
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_BASE_URL }),
   endpoints: (builder) => ({
     getCO2Emission: builder.query({
-      query: ({ namespace, startDate, endDate }) =>
-        `/co2_emission_with_kube_green?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => {
-        return {
-          historicalData: convertHistoricalData(
-            resData[0].values,
-            "Grams of CO2"
-          ),
-        };
-      },
+      query: ({namespace, startDate, endDate}) => `/co2_emission_with_kube_green${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse: resData => {
+        return {historicalData:convertHistoricalData(resData[0].values,"Grams of CO2")}
+      }
     }),
     getPods: builder.query({
-      query: ({ namespace, startDate, endDate }) =>
-        `/all_active_pods?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => convertData(resData, "Number of pods"),
+      query: ({namespace, startDate, endDate}) => `/all_active_pods${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse : resData => convertData(resData, "Number of pods")
     }),
     getCpuUsage: builder.query({
-      query: ({ namespace, startDate, endDate }) =>
-        `/cpu_usage?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => convertData(resData, "CPU Usage"),
+      query: ({namespace, startDate, endDate}) => `/cpu_usage${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse : resData => convertData(resData, "CPU Usage")
     }),
     getCpuAllocation: builder.query({
-      query: ({ namespace, startDate, endDate }) =>
-        `cpu_allocation?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => convertData(resData, "CPU Allocation"),
+      query: ({namespace, startDate, endDate}) => `cpu_allocation${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse : resData => convertData(resData, "CPU Allocation")
     }),
     getMemoryUsage: builder.query({
-      query: ({ namespace, startDate, endDate }) =>
-        `/memory_usage?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => convertData(resData, "Memory Usage"),
+      query: ({namespace, startDate, endDate}) => `/memory_usage${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse : resData => convertData(resData, "Memory Usage")
     }),
     getMemoryAllocation: builder.query({
-      query: ({ namespace, startDate, endDate }) =>
-        `/memory_allocation?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => convertData(resData, "Memory Allocation"),
+      query: ({namespace, startDate, endDate}) => `/memory_allocation${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse : resData => convertData(resData, "Memory Allocation")
     }),
     getSavedEmission: builder.query({
-      query: ({ startDate, endDate, namespace }) =>
-        `saved_co2_emission?namespace=${namespace}&start=${startDate}&end=${endDate}`,
-      transformResponse: (resData) => {
-        return parseFloat(resData[0].values.pop().pop());
-      },
+      query: ({startDate, endDate,namespace}) => `saved_co2_emission${createQueryparams(namespace,startDate,endDate)}`,
+      transformResponse: resData => {
+        return parseFloat(resData[0].values.pop().pop())
+      }
     }),
     getNameSpaces: builder.query({
       query: ({ startDate, endDate }) =>
-      //  `/namespace_names?start=1639407132910&end=1639407192910`,
         `/namespace_names?start=${startDate}&end=${endDate}`,
       transformResponse: (resData) => extractNamespaceName(resData),
     })
