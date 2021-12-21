@@ -1,1 +1,122 @@
 @import "~antd/dist/antd.css";
+
+body {
+  background: #ececec;
+}
+
+#root {
+  padding-bottom: 5rem;
+  margin: auto;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.ant-card {
+  border-radius: 8px;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  grid-template-areas:
+    "lc b1"
+    "lc b2"
+    "lc b3"
+    "lc b4";
+}
+
+.layout-grid > * {
+  animation: fadeIn 500ms ease-in-out both;
+}
+.layout-grid > *:nth-child(1) {
+  animation-delay: 100ms;
+}
+.layout-grid > *:nth-child(2) {
+  animation-delay: 200ms;
+}
+.layout-grid > *:nth-child(3) {
+  animation-delay: 300ms;
+}
+.layout-grid > *:nth-child(4) {
+  animation-delay: 400ms;
+}
+.layout-grid > *:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 476px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media (min-width: 476px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1340px;
+    max-width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

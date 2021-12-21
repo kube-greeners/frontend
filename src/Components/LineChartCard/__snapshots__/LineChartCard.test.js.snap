@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches LineChartCard snapshot 1`] = `
+<div
+  className="ant-card ant-card-bordered"
+  style={
+    Object {
+      "gridArea": "lc",
+    }
+  }
+>
+  <div
+    className="ant-card-head"
+    style={Object {}}
+  >
+    <div
+      className="ant-card-head-wrapper"
+    >
+      <div
+        className="ant-card-head-title"
+      >
+        production
+      </div>
+    </div>
+  </div>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "height": 500,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        className="lds"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;

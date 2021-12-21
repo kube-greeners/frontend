@@ -1,0 +1,69 @@
+name: Upload frontend artifact to build
+
+on:
+  push:
+    branches: [ feature/*, bugfix/*, stylefix/*, ci/* ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - run: |
+          echo "name=$(echo ${github_ref/\//-} | tr '[:upper:]' '[:lower:]' |  grep -E 'kg-[0-9]+' -o )" >> $GITHUB_ENV
+        env:
+          github_ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Make the build
+        run: |
+          npm i
+          npm run build
+        env:
+          REACT_APP_API_BASE_URL: "../"
+          GENERATE_SOURCEMAP: "false"
+          PUBLIC_URL: "/${{ env.name }}/"
+
+      - name: Test the build
+        run: |
+          npm run test
+
+      - name: Upload artifact to Github
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: |
+            build
+
+
+      - name: Compress the artifact
+        run: |
+          tar -czf build.tar.gz build
+
+      # Setup gcloud CLI
+      - name: Setup GCloud CLI
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          project_id: kube-greeners
+
+      - name: Upload build to K8S
+        run: |
+          gcloud container clusters get-credentials test-cluster --zone=europe-west1-b --project=kube-greeners
+          kubectl delete configmap $name -n frontend || echo ""
+          kubectl create configmap $name --from-file=./build.tar.gz -n frontend
+
+
+      - name: Rolling restart all backends
+        run: |
+          kubectl -n backend rollout restart deployment
+
+
+
+

@@ -1,0 +1,26 @@
+name: Remove frontend from K8S
+on:
+  delete:
+    branches: [ feature/*, bugfix/*, stylefix/*, ci/* ]
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "name=$(echo ${github_ref/\//-} | tr '[:upper:]' '[:lower:]' |  grep -E 'kg-[0-9]+' -o )" >> $GITHUB_ENV
+      env:
+        github_ref: ${{ github.event.ref }}
+    - name: Setup GCloud CLI
+      uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        project_id: kube-greeners
+
+    - name: Delete build from K8S
+      run: |
+        gcloud container clusters get-credentials test-cluster --zone=europe-west1-b --project=kube-greeners
+        kubectl -n frontend configmap delete $name
+
+    - name: Rolling restart all backends
+      run: |
+        kubectl -n backend rollout restart deployment

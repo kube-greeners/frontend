@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches StatComponent snapshot 1`] = `
+<div
+  className="ant-card ant-card-bordered"
+  style={
+    Object {
+      "flex": "1",
+      "fontWeight": "bold",
+      "gridArea": undefined,
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    Loading...
+  </div>
+</div>
+`;
