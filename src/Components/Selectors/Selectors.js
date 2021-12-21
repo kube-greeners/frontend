@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Row, Select, DatePicker } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentlySelectedNamespace, setCurrentlySelectedResource, setCurrentInterval } from '../../redux/dashboardSlice';
+import {useGetNameSpacesQuery} from "../../redux/apiSlice";
 import moment from 'moment';
 import { convertDateWithOutTimestamp } from '../../Utilities/utilityFunctions';
 const { Option } = Select;
@@ -12,11 +13,12 @@ export default function Selectors() {
 
     const dateFormat = 'DD/MM/YYYY';
 
-    const {namespaces,resources} = useSelector(state => state.dashboard.selects);
+    const {namespaces, resources} = useSelector(state => state.dashboard.selects);
     const {startDateUnix, endDateUnix} = useSelector(state => state.dashboard.interval);
     const startDate = convertDateWithOutTimestamp(startDateUnix)
     const endDate = convertDateWithOutTimestamp(endDateUnix)
 
+    const namespaceNamesFetch = useGetNameSpacesQuery({startDate: startDateUnix, endDate: endDateUnix})
 
     const dispatch = useDispatch();
     
@@ -47,8 +49,9 @@ export default function Selectors() {
             <Row gutter={24} style={{ paddingTop: '7rem' }}>
                 <Col span={7}>
                     <Selector 
-                    data={namespaces.data} 
-                    name="Namespace" 
+                    data={namespaceNamesFetch.data} 
+                    name="Namespace"
+                    loading={namespaceNamesFetch.isFetching} 
                     defaultVal={namespaces.currentlySelected} 
                     labelStyle={labelStyle}
                     style={{ display: 'block' }} 
@@ -82,7 +85,7 @@ function Selector({ data, name, defaultVal, labelStyle, ...rest }) {
         <>
             <label htmlFor={name} style={labelStyle}>{name}</label>
             <Select id={name} defaultValue={defaultVal} {...rest} >
-                {data.map(n => <Option key={n} value={n}>{n}</Option>)}
+                {data && data.map(n => <Option key={n} value={n}>{n}</Option>)}
             </Select>
         </>
     )

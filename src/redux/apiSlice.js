@@ -27,11 +27,7 @@ function convertData(resData, xAxisName) {
 function extractNamespaceName(resData) {
   const namespaces = resData.map(d => d.metric.namespace) 
   namespaces.push("All namespaces")
-  const state = {
-    currentlySelected : "All namespaces",
-    namespaces
-  }
-  return state;
+  return namespaces;
 
 }
 

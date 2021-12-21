@@ -13,7 +13,6 @@ import {
   useGetMemoryUsageQuery,
   useGetMemoryAllocationQuery,
   useGetSavedEmissionQuery,
-  useGetNameSpacesQuery,
 } from "./redux/apiSlice";
 import Selectors from "./Components/Selectors/Selectors";
 import { useRef } from "react";
@@ -39,7 +38,7 @@ function App() {
   const memoryAllocationFetch = useGetMemoryAllocationQuery(queryParams);
   const co2EmissionQuery = useGetCO2EmissionQuery(queryParams);
   const savedEmissionFetch = useGetSavedEmissionQuery(queryParams);
-  const namespaceNamesFetch = useGetNameSpacesQuery({startDate: startDateUnix, endDate: endDateUnix})
+
 
   const modalIsOpen = useRef(false);
 
@@ -51,7 +50,6 @@ function App() {
     "Memory allocation": memoryAllocationFetch,
     "Estimated CO2 emission": co2EmissionQuery,
     "Saved emission": savedEmissionFetch,
-    "Namespace names": namespaceNamesFetch,
   };
 
   const allFetchesDone = Object.values(fetchingMap).every((f) => !f.isFetching);
