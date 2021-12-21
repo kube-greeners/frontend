@@ -4,8 +4,8 @@ import { Card } from "antd";
 function StatComponent({
   gridArea,
   title,
-  loaded1,
-  loaded2,
+  success1,
+  success2,
   stat1,
   stat2,
   unit,
@@ -19,11 +19,11 @@ function StatComponent({
   return (
     <>
       <Card style={{ ...statContainerStyle, gridArea: gridArea }} title={title}>
-        {loaded2
-          ? loaded1 && loaded2
+        {success2
+          ? success1 && success2
             ? `${stat1.toFixed(2)} ${unit} / ${stat2.toFixed(2)} ${unit}`
             : "Loading..."
-          : loaded1
+          : success1
           ? `${stat1.toFixed(2)} ${unit ? unit : ""}`
           : "Loading..."}
       </Card>

@@ -82,14 +82,14 @@ function App() {
           <StatComponent
             gridArea="b1"
             title="Saved Emission"
-            loaded1={!savedEmissionFetch.isFetching}
+            success1={savedEmissionFetch.isSuccess}
             stat1={savedEmissionFetch.data} unit={'grams'}
           />
           <StatComponent
             gridArea="b2"
             title="CPU Usage and Allocation"
-            loaded1={!cpuAllocationFetch.isFetching}
-            loaded2={!cpuUsageFetch.isFetching}
+            success1={cpuAllocationFetch.isSuccess}
+            success2={cpuUsageFetch.isSuccess}
             stat1={cpuAllocationFetch.data?.currentValue}
             stat2={cpuUsageFetch.data?.currentValue}
             unit={"core"}
@@ -97,14 +97,14 @@ function App() {
           <StatComponent
             gridArea="b3"
             title="Memory Usage  and Allocation"
-            loaded1={!memoryAllocationFetch.isFetching}
-            loaded2={!memoryUsageFetch.isFetching} stat1={memoryAllocationFetch.data?.currentValue}
+            success1={memoryAllocationFetch.isSuccess}
+            success2={memoryUsageFetch.isSuccess} stat1={memoryAllocationFetch.data?.currentValue}
             stat2={memoryUsageFetch.data?.currentValue} unit={'GB'}
           />
           <StatComponent
             gridArea="b4"
             title="N Active Pod"
-            loaded1={!podFetch.isFetching}
+            success1={podFetch.isSuccess}
             stat1={podFetch.data?.currentValue}
           />
         </div>
