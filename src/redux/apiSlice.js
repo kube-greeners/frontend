@@ -24,6 +24,17 @@ function convertData(resData, xAxisName) {
   };
 }
 
+function extractNamespaceName(resData) {
+  const namespaces = resData.map(d => d.metric.namespace) 
+  namespaces.push("All namespaces")
+  const state = {
+    currentlySelected : "All namespaces",
+    namespaces
+  }
+  return state;
+
+}
+
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_BASE_URL }),
@@ -72,6 +83,12 @@ export const apiSlice = createApi({
         return parseFloat(resData[0].values.pop().pop());
       },
     }),
+    getNameSpaces: builder.query({
+      query: ({ startDate, endDate }) =>
+      //  `/namespace_names?start=1639407132910&end=1639407192910`,
+        `/namespace_names?start=${startDate}&end=${endDate}`,
+      transformResponse: (resData) => extractNamespaceName(resData),
+    })
   }),
 });
 
@@ -83,4 +100,5 @@ export const {
   useGetMemoryUsageQuery,
   useGetMemoryAllocationQuery,
   useGetSavedEmissionQuery,
+  useGetNameSpacesQuery,
 } = apiSlice;
