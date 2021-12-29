@@ -15,6 +15,9 @@ function StatComponent({
     flex: "1",
     textAlign: "center",
     fontWeight: "bold",
+    fontFamily: "Helvetica",
+    textShadow: "1px 0px 1px",
+    fontSize: "17px",
   };
   
  const decimals = integer? 0 : 2;
