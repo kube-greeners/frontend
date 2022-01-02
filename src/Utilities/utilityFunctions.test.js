@@ -1,7 +1,4 @@
-import { cleanup } from "@testing-library/react";
 import { mockedResData, convertedData, extractedNamespaces } from "./MockedResData";
-
-afterEach(cleanup);
 
 const {
   convertData,
@@ -12,7 +9,7 @@ const {
 const data = mockedResData;
 
 test("Properly converts data", () => {
-  expect(convertData(data, "Number of pods")).toStrictEqual(convertedData);
+  expect(convertData(data, "Memory Usage")).toStrictEqual(convertedData);
 });
 
 test("Properly extractes the namespace names", () => {

@@ -189,50 +189,50 @@ export const mockedResData = [
 ];
 
 export const convertedData = {
-  currentValue: 1,
-  historicalData: [
-    {
-      Date: "23/12/2021 17:16:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "24/12/2021 10:04:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "25/12/2021 02:52:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "25/12/2021 19:40:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "26/12/2021 12:28:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "27/12/2021 05:16:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "28/12/2021 14:52:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "29/12/2021 07:40:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "30/12/2021 00:28:53",
-      "Number of pods": 1,
-    },
-    {
-      Date: "2/1/2022 12:28:53",
-      "Number of pods": 1,
-    },
-  ],
-};
+  "currentValue": 1,
+  "historicalData": [
+      {
+          "Date": "23/12/2021 17:16:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "24/12/2021 10:04:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "25/12/2021 02:52:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "25/12/2021 19:40:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "26/12/2021 12:28:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "27/12/2021 05:16:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "28/12/2021 14:52:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "29/12/2021 07:40:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "30/12/2021 00:28:53",
+          "Memory Usage": 1
+      },
+      {
+          "Date": "2/1/2022 12:28:53",
+          "Memory Usage": 1
+      }
+  ]
+}
 
 export const extractedNamespaces = [
   "All namespaces",
