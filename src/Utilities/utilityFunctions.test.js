@@ -1,21 +1,22 @@
-import {
-  mockedResData,
-  convertedData,
-  extractedNamespaces,
-} from "./MockedResData";
+import { testResData, convertedData, extractedNamespaces } from "./testResData";
 
 const {
   convertDate,
+  convertDateWithoutTimestamp,
   convertData,
   extractNamespaceName,
   createQueryparams,
 } = require("./utilityFunctions");
 
-const data = mockedResData;
+const data = testResData;
 
 for (const d of convertedData.historicalData) {
   d["Date"] = convertDate(d["Date"]);
 }
+
+test("Properly converts date without timestamp", () => {
+  expect(convertDateWithoutTimestamp(1639937257705)).toEqual("19/12/2021");
+});
 
 test("Properly converts data", () => {
   expect(convertData(data, "Memory Usage")).toEqual(convertedData);

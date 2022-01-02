@@ -5,7 +5,7 @@ export const convertDate = (timeStamp) =>
     .toLocaleTimeString()
     .replace(/\./g, ":")}`;
 
-export function convertDateWithOutTimestamp(unixTimestamp) {
+export function convertDateWithoutTimestamp(unixTimestamp) {
   const d = new Date(unixTimestamp);
   return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
 }

@@ -1,4 +1,4 @@
-export const mockedResData = [
+export const testResData = [
   {
     metric: {
       namespace: "backend",
