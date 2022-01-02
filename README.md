@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-## Available Scripts
+<br />
+<div align="center">
 
-In the project directory, you can run:
+<h3 align="center">kube-green Dashboard Frontend</h3>
 
-### `npm start`
+  <p align="center">
+    Making the kube-green savings stand out
+    <br />
+    <br />
+    <a href="https://github.com/kube-greeners/frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/kube-greeners/frontend/issues">Request Feature</a>
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#used-technologies-and-libraries">Used Technologies and Libraries</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#local-installation-and-running">Local Installation and Running</a></li>
+        <li><a href="#installation-to-a-kubernetes-cluster">Installation to a Kubernetes Cluster</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#code-structure">Code Structure</a>
+      <ul>
+        <li><a href="#directories">Directories</a></li>
+        <li><a href="#logic">Logic</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#people">People</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+This project, as a part of the Dashboard for kube-green project intends to provide the frontend application for the Dashboard. //TODO rewrite the end of this scentence
+By itself this project is not that much of use and it would be better to combine it with the backend to deploy.
+This project is developed as a part of Distributed Software Development course taught at Politecnico di Milano and Mälardalen University in academic year 2021-2022, with the proposal provided by Mia Platform.
+This project is built with the expectancy of accompanying [kube-green](https://github.com/kube-green/kube-green).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run build`
+### Used technologies and Libraries
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Ant Design](https://ant.design/)
+- [kube-green](https://github.com/kube-green/kube-green)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### README is based on [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+TODO
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+TODO
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Local Installation and Running
 
-## Learn More
+TODO
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code structure
 
-### Code Splitting
+TODO write a section here
+This repository consists of the main code for the frontend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Directories
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-### Advanced Configuration
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Distributed under the MIT License. See `LICENSE` for more information.
 
-### `npm run build` fails to minify
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## People
+
+#### Built by:
+
+- Boris Grunwald [@jikol1906](https://github.com/jikol1906)
+- Ragnhild Kleiven [@RagnhildK](https://github.com/RagnhildK)
+- Hanna Torjusen [@hanntorj](https://github.com/hanntorj)
+- Marija Popovic [@marijapopovic28](https://github.com/marijapopovic28)
+- Amila Cizmic [@amilacizmic](https://github.com/amilacizmic)
+
+#### [kube-green frontend](https://github.com/kube-greeners/frontend/) by:
+
+- Ozan İncesulu [@ozyinc](https://github.com/ozyinc)
+- Alban Delishi [@albandelishi](https://github.com/albandelishi)
+- Zoé Pesleux [@zoepj](https://github.com/zoepj)
+- Redion Lila [@rlila97](https://github.com/rlila97)
+
+#### Acknowledgements:
+
+We would like to thank:
+
+- Malvina Latifaj and Samuele Giussani for their assistance and feedback through this project and for sharing this journey with us.
+- Davide Bianchi for kube-green and valuable guidance for integration of this project
+- Francesca Carta for feedback regarding each step of the product built.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+[contributors-shield]: https://img.shields.io/github/contributors/kube-greeners/backend.svg?style=for-the-badge
+[contributors-url]: https://github.com/kube-greeners/backend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/kube-greeners/backend.svg?style=for-the-badge
+[forks-url]: https://github.com/kube-greeners/backend/network/members
+[stars-shield]: https://img.shields.io/github/stars/kube-greeners/backend.svg?style=for-the-badge
+[stars-url]: https://github.com/kube-greeners/backend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/kube-greeners/backend.svg?style=for-the-badge
+[issues-url]: https://github.com/kube-greeners/backend/issues
+[license-shield]: https://img.shields.io/github/license/kube-greeners/backend.svg?style=for-the-badge
+[license-url]: https://github.com/kube-greeners/backend/blob/dev/LICENSE
