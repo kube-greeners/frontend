@@ -107,6 +107,7 @@ function App() {
             title="N Active Pod"
             success1={podFetch.isSuccess}
             stat1={podFetch.data?.currentValue}
+            integer={true}
           />
         </div>
       </div>
