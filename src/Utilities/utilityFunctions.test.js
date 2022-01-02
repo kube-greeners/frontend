@@ -24,5 +24,3 @@ test("Properly creates query params", () => {
   expect(createQueryparams(null, 1639916278206, 1641125802316)).toBe(`?start=1639916278206&end=1641125802316`);
 
 })
-
-// todo flytte all namespaces til toppen
