@@ -25,6 +25,12 @@ export const convertHistoricalData = (data, xAxisName) => {
 };
 
 export function convertData(resData, xAxisName) {
+  if(resData.length === 0) {
+    return {
+      currentValue:null,
+      historicalData:null
+    }
+  }
   return {
     currentValue: parseFloat(
       resData[0].values[resData[0].values.length - 1][1]

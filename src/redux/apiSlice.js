@@ -18,6 +18,9 @@ export const apiSlice = createApi({
           endDate
         )}`,
       transformResponse: (resData) => {
+        if(resData.length === 0) {
+          return null;
+        }
         return {
           historicalData: convertHistoricalData(
             resData[0].values,
@@ -55,6 +58,9 @@ export const apiSlice = createApi({
       query: ({ startDate, endDate, namespace }) =>
         `saved_co2_emission${createQueryparams(namespace, startDate, endDate)}`,
       transformResponse: (resData) => {
+        if(resData.length === 0) {
+          return null
+        }
         return parseFloat(resData[0].values.pop().pop());
       },
     }),
