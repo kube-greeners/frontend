@@ -3,58 +3,51 @@ import { Col, Row, Select, DatePicker } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setCurrentlySelectedNamespace,
-  setCurrentlySelectedResource,
   setCurrentInterval,
 } from "../../redux/dashboardSlice";
 import { useGetNameSpacesQuery } from "../../redux/apiSlice";
 import moment from "moment";
 import { convertDateWithoutTimestamp } from "../../Utilities/utilityFunctions";
 const { Option } = Select;
-
+​
 export default function Selectors() {
   const { RangePicker } = DatePicker;
 
   const dateFormat = "DD/MM/YYYY";
-
-  const { namespaces, resources } = useSelector(
-    (state) => state.dashboard.selects
-  );
+​
+  const { namespaces } = useSelector((state) => state.dashboard.selects);
   const { startDateUnix, endDateUnix } = useSelector(
     (state) => state.dashboard.interval
   );
-
+​
   const startDate = convertDateWithoutTimestamp(startDateUnix);
   const endDate = convertDateWithoutTimestamp(endDateUnix);
-
+​
   const namespaceNamesFetch = useGetNameSpacesQuery({
     startDate: startDateUnix,
     endDate: endDateUnix,
   });
-
+​
   const dispatch = useDispatch();
-
+​
   const nameSpaceSelected = (ns) => {
     dispatch(setCurrentlySelectedNamespace(ns));
   };
-
-  const resourceSelected = (rs) => {
-    dispatch(setCurrentlySelectedResource(rs));
-  };
-
+​
   const intervalSelected = (date, dateString) => {
     dispatch(setCurrentInterval(dateString));
   };
-
+​
   function disabledDate(current) {
     return current > moment().endOf("day");
   }
-
+​
   const labelStyle = {
     marginBottom: ".5rem",
     display: "block",
     color: "#666666",
   };
-
+​
   return (
     <>
       <Row gutter={24} style={{ paddingTop: "7rem" }}>
@@ -67,16 +60,6 @@ export default function Selectors() {
             labelStyle={labelStyle}
             style={{ display: "block" }}
             onChange={nameSpaceSelected}
-          />
-        </Col>
-        <Col span={7}>
-          <Selector
-            data={resources.data}
-            name="Resource"
-            defaultVal={resources.currentlySelected}
-            labelStyle={labelStyle}
-            style={{ display: "block" }}
-            onChange={resourceSelected}
           />
         </Col>
         <Col span={7}>
@@ -95,13 +78,22 @@ export default function Selectors() {
     </>
   );
 }
-
-function Selector({ data, name, defaultVal, labelStyle, ...rest }) {
+​
+export function Selector({
+  title=true,
+  data,
+  name,
+  defaultVal,
+  labelStyle,
+  ...rest
+}) {
   return (
     <>
-      <label htmlFor={name} style={labelStyle}>
-        {name}
-      </label>
+      {title && (
+        <label htmlFor={name} style={labelStyle}>
+          {name}
+        </label>
+      )}
       <Select id={name} defaultValue={defaultVal} {...rest}>
         {data &&
           data.map((n) => (

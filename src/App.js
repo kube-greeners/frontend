@@ -1,5 +1,4 @@
 import StatComponent from "./Components/StatComponent/StatComponent";
-
 import NavBar from "./Components/NavBar/NavBar";
 import { Divider, Modal } from "antd";
 import LineChartCard from "./Components/LineChartCard/LineChartCard";
@@ -16,21 +15,24 @@ import {
 } from "./redux/apiSlice";
 import Selectors from "./Components/Selectors/Selectors";
 import { useRef } from "react";
-
+​
 function App() {
-  const { resources,namespaces } = useSelector((state) => state.dashboard.selects);
+  const { resources, namespaces } = useSelector(
+    (state) => state.dashboard.selects
+  );
   const { startDateUnix, endDateUnix } = useSelector(
     (state) => state.dashboard.interval
   );
-
-
+​
   const queryParams = {
-    namespace: namespaces.currentlySelected === 'All namespaces' ? null : namespaces.currentlySelected, 
-    startDate: startDateUnix, 
-    endDate: endDateUnix
-  }
-
-
+    namespace:
+      namespaces.currentlySelected === "All namespaces"
+        ? null
+        : namespaces.currentlySelected,
+    startDate: startDateUnix,
+    endDate: endDateUnix,
+  };
+​
   const podFetch = useGetPodsQuery(queryParams);
   const cpuUsageFetch = useGetCpuUsageQuery(queryParams);
   const cpuAllocationFetch = useGetCpuAllocationQuery(queryParams);
@@ -38,10 +40,9 @@ function App() {
   const memoryAllocationFetch = useGetMemoryAllocationQuery(queryParams);
   const co2EmissionQuery = useGetCO2EmissionQuery(queryParams);
   const savedEmissionFetch = useGetSavedEmissionQuery(queryParams);
-
-
+​
   const modalIsOpen = useRef(false);
-
+​
   const fetchingMap = {
     "Active pods": podFetch,
     "CPU allocation": cpuAllocationFetch,
@@ -51,7 +52,7 @@ function App() {
     "Estimated CO2 emission": co2EmissionQuery,
     "Saved emission": savedEmissionFetch,
   };
-
+​
   const allFetchesDone = Object.values(fetchingMap).every((f) => !f.isFetching);
   if (allFetchesDone) {
     const errors = Object.values(fetchingMap).filter((f) => f.isError);
@@ -68,7 +69,7 @@ function App() {
       });
     }
   }
-
+​
   return (
     <>
       <NavBar />
@@ -84,7 +85,8 @@ function App() {
             gridArea="b1"
             title="Saved Emission"
             success1={savedEmissionFetch.isSuccess}
-            stat1={savedEmissionFetch.data} unit={'grams'}
+            stat1={savedEmissionFetch.data}
+            unit={"grams"}
           />
           <StatComponent
             gridArea="b2"
@@ -99,8 +101,10 @@ function App() {
             gridArea="b3"
             title="Memory Usage  and Allocation"
             success1={memoryAllocationFetch.isSuccess}
-            success2={memoryUsageFetch.isSuccess} stat1={memoryAllocationFetch.data?.currentValue}
-            stat2={memoryUsageFetch.data?.currentValue} unit={'GB'}
+            success2={memoryUsageFetch.isSuccess}
+            stat1={memoryAllocationFetch.data?.currentValue}
+            stat2={memoryUsageFetch.data?.currentValue}
+            unit={"GB"}
           />
           <StatComponent
             gridArea="b4"
@@ -114,5 +118,5 @@ function App() {
     </>
   );
 }
-
+​
 export default App;
