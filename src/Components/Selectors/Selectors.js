@@ -3,7 +3,6 @@ import { Col, Row, Select, DatePicker } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setCurrentlySelectedNamespace,
-  setCurrentlySelectedResource,
   setCurrentInterval,
 } from "../../redux/dashboardSlice";
 import { useGetNameSpacesQuery } from "../../redux/apiSlice";
@@ -16,9 +15,7 @@ export default function Selectors() {
 
   const dateFormat = "DD/MM/YYYY";
 
-  const { namespaces, resources } = useSelector(
-    (state) => state.dashboard.selects
-  );
+  const { namespaces } = useSelector((state) => state.dashboard.selects);
   const { startDateUnix, endDateUnix } = useSelector(
     (state) => state.dashboard.interval
   );
@@ -35,10 +32,6 @@ export default function Selectors() {
 
   const nameSpaceSelected = (ns) => {
     dispatch(setCurrentlySelectedNamespace(ns));
-  };
-
-  const resourceSelected = (rs) => {
-    dispatch(setCurrentlySelectedResource(rs));
   };
 
   const intervalSelected = (date, dateString) => {
@@ -70,16 +63,6 @@ export default function Selectors() {
           />
         </Col>
         <Col span={7}>
-          <Selector
-            data={resources.data}
-            name="Resource"
-            defaultVal={resources.currentlySelected}
-            labelStyle={labelStyle}
-            style={{ display: "block" }}
-            onChange={resourceSelected}
-          />
-        </Col>
-        <Col span={7}>
           <label style={labelStyle}>Time interval</label>
           <RangePicker
             defaultValue={[
@@ -96,12 +79,21 @@ export default function Selectors() {
   );
 }
 
-function Selector({ data, name, defaultVal, labelStyle, ...rest }) {
+export function Selector({
+  title=true,
+  data,
+  name,
+  defaultVal,
+  labelStyle,
+  ...rest
+}) {
   return (
     <>
-      <label htmlFor={name} style={labelStyle}>
-        {name}
-      </label>
+      {title && (
+        <label htmlFor={name} style={labelStyle}>
+          {name}
+        </label>
+      )}
       <Select id={name} defaultValue={defaultVal} {...rest}>
         {data &&
           data.map((n) => (
