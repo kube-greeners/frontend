@@ -5,22 +5,22 @@ import { setCurrentlySelectedResource } from "../../redux/dashboardSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Selector } from "./../Selectors/Selectors";
 import { Card } from "antd";
-​
+
 function LineChartCard({ dataFetching, currentlyShowing }) {
   const { resources } = useSelector((state) => state.dashboard.selects);
-​
+
   const dispatch = useDispatch();
-​
+
   const resourceSelected = (rs) => {
     dispatch(setCurrentlySelectedResource(rs));
   };
-​
+
   const labelStyle = {
     marginBottom: ".5rem",
     display: "block",
     color: "#666666",
   };
-​
+
   return (
     <Card
       style={{ gridArea: "lc" }}
@@ -53,5 +53,5 @@ function LineChartCard({ dataFetching, currentlyShowing }) {
     </Card>
   );
 }
-​
+
 export default LineChartCard;
