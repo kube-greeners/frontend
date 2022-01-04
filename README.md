@@ -73,8 +73,12 @@ This project is built with the expectancy of accompanying [kube-green](https://g
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
+The project was bootstrapped with [Create-react-app](https://create-react-app.dev/) and includes the basic commands:
 
-TODO
+Start development server (`npm start`)
+Build the app (`npm run build`)
+Run tests (`npm run test`)
+
 
 ### Prerequisites
 
