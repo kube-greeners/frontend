@@ -65,6 +65,7 @@ This project is built with the expectancy of accompanying [kube-green](https://g
 
 - [React](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
+  - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Ant Design](https://ant.design/)
 - [kube-green](https://github.com/kube-green/kube-green)
 
