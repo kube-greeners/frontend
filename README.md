@@ -84,7 +84,8 @@ The project was bootstrapped with [Create-react-app](https://create-react-app.de
 
 ### Prerequisites
 
-TODO
+The [backend](https://github.com/kube-greeners/backend) project needs to be setup and running
+
 
 ### Local Installation and Running
 
