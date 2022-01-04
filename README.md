@@ -73,11 +73,11 @@ This project is built with the expectancy of accompanying [kube-green](https://g
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
-The project was bootstrapped with [Create-react-app](https://create-react-app.dev/) and includes the basic commands:
+The project was bootstrapped with [Create-react-app](https://create-react-app.dev/) and includes all of the scripts that are preconfigured with this tool:
 
-- Starting the development server
-  -  First start the backend script `./connect.mjs --backend dev`
-  -  And then run the start scropt `npm start`
+Make sure to navigate to the root folder of the project before running each commands
+
+-  And then run the start script `npm start`
 - Build the app `npm run build`  
 - Run tests `npm run test`
 
