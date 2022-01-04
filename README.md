@@ -115,9 +115,7 @@ All source code is located in the `src/`
 TODO write a section here
 This repository consists of the main code for the frontend.
 
-### Directories
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contributing
 
