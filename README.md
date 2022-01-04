@@ -88,7 +88,9 @@ TODO
 
 ### Local Installation and Running
 
-TODO
+Make sure to have [Node](https://nodejs.org/en/) installed
+
+Clone the repository and install dependencies with `npm i`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
