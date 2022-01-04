@@ -27,10 +27,10 @@ function StatComponent({
       <Card style={{ ...statContainerStyle, gridArea: gridArea }} title={title}>
         {success2
           ? success1 && success2
-            ? `${stat1.toFixed(decimals)} ${unit} / ${stat2.toFixed(decimals)} ${unit}`
+            ? (stat1 && stat2) ? `${stat1.toFixed(decimals)} ${unit} / ${stat2.toFixed(decimals)} ${unit}` : "No data"
             : "Loading..."
           : success1
-          ? `${stat1.toFixed(decimals)} ${unit ? unit : ""}`
+          ? stat1 ? `${stat1.toFixed(decimals)} ${unit ? unit : ""}` : "No data"
           : "Loading..."}
       </Card>
     </>

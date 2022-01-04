@@ -37,7 +37,7 @@ function LineChartCard({ dataFetching, currentlyShowing }) {
       }
     >
       {!dataFetching.isFetching && dataFetching.isSuccess ? (
-        <LineChart data={dataFetching.data.historicalData} />
+        dataFetching.data ? <LineChart data={dataFetching.data.historicalData} /> : "No data"
       ) : (
         <div
           style={{
