@@ -6,9 +6,12 @@ exports[`matches StatComponent snapshot 1`] = `
   style={
     Object {
       "flex": "1",
+      "fontFamily": "Helvetica",
+      "fontSize": "17px",
       "fontWeight": "bold",
       "gridArea": undefined,
       "textAlign": "center",
+      "textShadow": "1px 0px 1px",
     }
   }
 >

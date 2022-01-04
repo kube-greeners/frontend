@@ -250,116 +250,6 @@ Array [
         }
       >
         <label
-          htmlFor="Resource"
-          style={
-            Object {
-              "color": "#666666",
-              "display": "block",
-              "marginBottom": ".5rem",
-            }
-          }
-        >
-          Resource
-        </label>
-        <div
-          className="ant-select ant-select-single ant-select-show-arrow"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          style={
-            Object {
-              "display": "block",
-            }
-          }
-        >
-          <div
-            className="ant-select-selector"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-          >
-            <span
-              className="ant-select-selection-search"
-            >
-              <input
-                aria-activedescendant="Resource_list_0"
-                aria-autocomplete="list"
-                aria-controls="Resource_list"
-                aria-haspopup="listbox"
-                aria-owns="Resource_list"
-                autoComplete="off"
-                className="ant-select-selection-search-input"
-                id="Resource"
-                onChange={[Function]}
-                onCompositionEnd={[Function]}
-                onCompositionStart={[Function]}
-                onKeyDown={[Function]}
-                onMouseDown={[Function]}
-                onPaste={[Function]}
-                readOnly={true}
-                role="combobox"
-                style={
-                  Object {
-                    "opacity": 0,
-                  }
-                }
-                type="search"
-                unselectable="on"
-                value=""
-              />
-            </span>
-            <span
-              className="ant-select-selection-item"
-              title="Estimated CO2 emission"
-            >
-              Estimated CO2 emission
-            </span>
-          </div>
-          <span
-            aria-hidden={true}
-            className="ant-select-arrow"
-            onMouseDown={[Function]}
-            style={
-              Object {
-                "WebkitUserSelect": "none",
-                "userSelect": "none",
-              }
-            }
-            unselectable="on"
-          >
-            <span
-              aria-label="down"
-              className="anticon anticon-down ant-select-suffix"
-              role="img"
-            >
-              <svg
-                aria-hidden="true"
-                data-icon="down"
-                fill="currentColor"
-                focusable="false"
-                height="1em"
-                viewBox="64 64 896 896"
-                width="1em"
-              >
-                <path
-                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                />
-              </svg>
-            </span>
-          </span>
-        </div>
-      </div>
-      <div
-        className="ant-col ant-col-7"
-        style={
-          Object {
-            "paddingLeft": 12,
-            "paddingRight": 12,
-          }
-        }
-      >
-        <label
           style={
             Object {
               "color": "#666666",
@@ -523,7 +413,94 @@ Array [
             <div
               className="ant-card-head-title"
             >
-              Estimated CO2 emission
+              <div
+                className="ant-select ant-select-single ant-select-show-arrow"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+              >
+                <div
+                  className="ant-select-selector"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                >
+                  <span
+                    className="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="Resource_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="Resource_list"
+                      aria-haspopup="listbox"
+                      aria-owns="Resource_list"
+                      autoComplete="off"
+                      className="ant-select-selection-search-input"
+                      id="Resource"
+                      onChange={[Function]}
+                      onCompositionEnd={[Function]}
+                      onCompositionStart={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      onPaste={[Function]}
+                      readOnly={true}
+                      role="combobox"
+                      style={
+                        Object {
+                          "opacity": 0,
+                        }
+                      }
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    className="ant-select-selection-item"
+                    title="Estimated CO2 emission"
+                  >
+                    Estimated CO2 emission
+                  </span>
+                </div>
+                <span
+                  aria-hidden={true}
+                  className="ant-select-arrow"
+                  onMouseDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitUserSelect": "none",
+                      "userSelect": "none",
+                    }
+                  }
+                  unselectable="on"
+                >
+                  <span
+                    aria-label="down"
+                    className="anticon anticon-down ant-select-suffix"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -561,9 +538,12 @@ Array [
         style={
           Object {
             "flex": "1",
+            "fontFamily": "Helvetica",
+            "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b1",
             "textAlign": "center",
+            "textShadow": "1px 0px 1px",
           }
         }
       >
@@ -593,9 +573,12 @@ Array [
         style={
           Object {
             "flex": "1",
+            "fontFamily": "Helvetica",
+            "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b2",
             "textAlign": "center",
+            "textShadow": "1px 0px 1px",
           }
         }
       >
@@ -625,9 +608,12 @@ Array [
         style={
           Object {
             "flex": "1",
+            "fontFamily": "Helvetica",
+            "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b3",
             "textAlign": "center",
+            "textShadow": "1px 0px 1px",
           }
         }
       >
@@ -657,9 +643,12 @@ Array [
         style={
           Object {
             "flex": "1",
+            "fontFamily": "Helvetica",
+            "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b4",
             "textAlign": "center",
+            "textShadow": "1px 0px 1px",
           }
         }
       >
