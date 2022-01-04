@@ -19,7 +19,7 @@ jobs:
     - name: Delete build from K8S
       run: |
         gcloud container clusters get-credentials test-cluster --zone=europe-west1-b --project=kube-greeners
-        kubectl -n frontend configmap delete $name
+        kubectl delete configmap $name -n frontend
 
     - name: Rolling restart all backends
       run: |
