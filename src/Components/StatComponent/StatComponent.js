@@ -4,27 +4,33 @@ import { Card } from "antd";
 function StatComponent({
   gridArea,
   title,
-  loaded1,
-  loaded2,
+  success1,
+  success2,
   stat1,
   stat2,
   unit,
+  integer = false,
 }) {
   const statContainerStyle = {
     flex: "1",
     textAlign: "center",
     fontWeight: "bold",
+    fontFamily: "Helvetica",
+    textShadow: "1px 0px 1px",
+    fontSize: "17px",
   };
+  
+ const decimals = integer? 0 : 2;
 
   return (
     <>
       <Card style={{ ...statContainerStyle, gridArea: gridArea }} title={title}>
-        {loaded2
-          ? loaded1 && loaded2
-            ? `${stat1.toFixed(2)} ${unit} / ${stat2.toFixed(2)} ${unit}`
+        {success2
+          ? success1 && success2
+            ? (stat1 && stat2) ? `${stat1.toFixed(decimals)} ${unit} / ${stat2.toFixed(decimals)} ${unit}` : "No data"
             : "Loading..."
-          : loaded1
-          ? `${stat1.toFixed(2)} ${unit ? unit : ""}`
+          : success1
+          ? stat1 ? `${stat1.toFixed(decimals)} ${unit ? unit : ""}` : "No data"
           : "Loading..."}
       </Card>
     </>

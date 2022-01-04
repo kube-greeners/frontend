@@ -6,22 +6,7 @@ const twoWeeksAgo = Number(new Date()) - 12096e5;
 const initialState = {
   selects: {
     namespaces: {
-      currentlySelected: 'All namespaces',
-      data: [
-      "All namespaces",
-      "backend",
-      "bizdev",
-      "cert-manager",
-      "default",
-      "frontend",
-      "kube-green",
-      "kube-node-lease",
-      "kube-public",
-      "kube-system",
-      "monitoring",
-      "postprod",
-      "staging"
-      ]
+      currentlySelected: "All namespaces",
     },
     resources: {
       currentlySelected: "Estimated CO2 emission",
@@ -50,11 +35,13 @@ export const dashboardSlice = createSlice({
       state.selects.resources.currentlySelected = action.payload;
     },
     setCurrentInterval: (state, action) => {
-      const [day,month,year] = action.payload[0].split("/")
-      const [endDay,endMonth,endYear] = action.payload[1].split("/")
-      state.interval.startDateUnix = Number(new Date(year,month-1,day))
-      state.interval.endDateUnix = Number(new Date(endYear, endMonth-1, endDay))
-    }
+      const [day, month, year] = action.payload[0].split("/");
+      const [endDay, endMonth, endYear] = action.payload[1].split("/");
+      state.interval.startDateUnix = Number(new Date(year, month - 1, day));
+      state.interval.endDateUnix = Number(
+        new Date(endYear, endMonth - 1, endDay)
+      );
+    },
   },
 });
 
