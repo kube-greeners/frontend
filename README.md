@@ -141,13 +141,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 #### Built by:
 
+#### [kube-green frontend](https://github.com/kube-greeners/frontend/) by:
+
 - Boris Grunwald [@jikol1906](https://github.com/jikol1906)
 - Ragnhild Kleiven [@RagnhildK](https://github.com/RagnhildK)
 - Hanna Torjusen [@hanntorj](https://github.com/hanntorj)
 - Marija Popovic [@marijapopovic28](https://github.com/marijapopovic28)
 - Amila Cizmic [@amilacizmic](https://github.com/amilacizmic)
 
-#### [kube-green frontend](https://github.com/kube-greeners/frontend/) by:
+#### [kube-green backend](https://github.com/kube-greeners/backned/) by:
 
 - Ozan İncesulu [@ozyinc](https://github.com/ozyinc)
 - Alban Delishi [@albandelishi](https://github.com/albandelishi)
