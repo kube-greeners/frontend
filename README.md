@@ -93,6 +93,9 @@ Make sure to have [Node](https://nodejs.org/en/) installed
 
 Clone the repository and install dependencies with `npm i`
 
+Change the `REACT_APP_API_BASE_URL` in [.env.development](https://github.com/kube-greeners/frontend/blob/main/.env.development) to reference the URL of the backend.
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Code structure
