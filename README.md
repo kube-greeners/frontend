@@ -75,9 +75,11 @@ This project is built with the expectancy of accompanying [kube-green](https://g
 ## Getting Started
 The project was bootstrapped with [Create-react-app](https://create-react-app.dev/) and includes the basic commands:
 
-Start development server (`npm start`)
-Build the app (`npm run build`)
-Run tests (`npm run test`)
+- Starting the development server
+  -  First start the backend script `./connect.mjs --backend dev`
+  -  And then run the start scropt `npm start`
+- Build the app `npm run build`  
+- Run tests `npm run test`
 
 
 ### Prerequisites
