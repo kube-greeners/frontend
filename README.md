@@ -54,7 +54,7 @@
 
 ## About The Project
 
-This project, as a part of the Dashboard for kube-green project intends to provide the frontend application for the Dashboard. //TODO rewrite the end of this scentence
+This project, as a part of the Dashboard for kube-green project intends to provide the frontend application for the Dashboard.
 By itself this project is not that much of use and it would be better to combine it with the backend to deploy.
 This project is developed as a part of Distributed Software Development course taught at Politecnico di Milano and Mälardalen University in academic year 2021-2022, with the proposal provided by Mia Platform.
 This project is built with the expectancy of accompanying [kube-green](https://github.com/kube-green/kube-green).
@@ -112,8 +112,6 @@ All source code is located in the `src/`
     .github - configuration files for github actions.
 
 
-TODO write a section here
-This repository consists of the main code for the frontend.
 
 
 
