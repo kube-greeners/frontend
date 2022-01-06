@@ -15,7 +15,7 @@ import {
 } from "./redux/apiSlice";
 import Selectors from "./Components/Selectors/Selectors";
 import { useRef } from "react";
-
+// TODO remove
 function App() {
   const { resources, namespaces } = useSelector(
     (state) => state.dashboard.selects
