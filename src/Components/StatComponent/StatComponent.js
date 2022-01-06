@@ -4,6 +4,7 @@ import { Card } from "antd";
 function StatComponent({
   gridArea,
   title,
+  isError,
   success1,
   success2,
   stat1,
