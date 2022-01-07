@@ -18,18 +18,24 @@ function StatComponent({
     fontWeight: "bold",
     fontSize: "17px",
   };
-  
- const decimals = integer? 0 : 2;
 
- const content = !isError ? (
-   success2
-     ? success1 && success2
-       ? (stat1 && stat2) ? `${stat1.toFixed(decimals)} ${unit} / ${stat2.toFixed(decimals)} ${unit}` : "No data"
-       : "Loading..."
-     : success1
-     ? stat1 ? `${stat1.toFixed(decimals)} ${unit ? unit : ""}` : "No data"
-     : "Loading..."
- ) : "Something went wrong."
+  const decimals = integer ? 0 : 2;
+
+  const content = !isError
+    ? success2
+      ? success1 && success2
+        ? Number.isFinite(stat1) && Number.isFinite(stat2)
+          ? `${stat1.toFixed(decimals)} ${unit} / ${stat2.toFixed(
+              decimals
+            )} ${unit}`
+          : "No data"
+        : "Loading..."
+      : success1
+      ? Number.isFinite(stat1)
+        ? `${stat1.toFixed(decimals)} ${unit ? unit : ""}`
+        : "No data"
+      : "Loading..."
+    : "Something went wrong";
 
   return (
     <>
