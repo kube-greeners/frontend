@@ -1,3 +1,5 @@
+![Kube-green Logo] (https://github.com/kube-greeners/frontend/blob/main/public/logo.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
