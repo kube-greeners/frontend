@@ -10,8 +10,6 @@
 <br />
 <div align="center">
 
-![Kube-green Logo](https://github.com/kube-greeners/frontend/blob/main/public/logo.png)
-
 <h3 align="center">kube-green Dashboard Frontend</h3>
 
   <p align="center">
