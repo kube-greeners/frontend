@@ -1,4 +1,4 @@
-
+<img src="https://github.com/kube-greeners/frontend/blob/main/public/logo.png" width="400" height="400" />
 <div id="top"></div>
 
 [![Contributors][contributors-shield]][contributors-url]
