@@ -42,7 +42,6 @@ function App() {
   const savedEmissionFetch = useGetSavedEmissionQuery(queryParams);
 
   const modalIsOpen = useRef(false);
-
   const fetchingMap = {
     "Active pods": podFetch,
     "CPU allocation": cpuAllocationFetch,
@@ -84,6 +83,7 @@ function App() {
           <StatComponent
             gridArea="b1"
             title="Saved Emission"
+            isError={savedEmissionFetch.isError}
             success1={savedEmissionFetch.isSuccess}
             stat1={savedEmissionFetch.data}
             unit={"grams"}
@@ -91,6 +91,7 @@ function App() {
           <StatComponent
             gridArea="b2"
             title="CPU Usage and Allocation"
+            isError={cpuAllocationFetch.isError || cpuUsageFetch.isError}
             success1={cpuAllocationFetch.isSuccess}
             success2={cpuUsageFetch.isSuccess}
             stat1={cpuAllocationFetch.data?.currentValue}
@@ -100,6 +101,7 @@ function App() {
           <StatComponent
             gridArea="b3"
             title="Memory Usage  and Allocation"
+            isError={memoryAllocationFetch.isError || memoryUsageFetch.isError}
             success1={memoryAllocationFetch.isSuccess}
             success2={memoryUsageFetch.isSuccess}
             stat1={memoryAllocationFetch.data?.currentValue}
@@ -109,6 +111,7 @@ function App() {
           <StatComponent
             gridArea="b4"
             title="N Active Pod"
+            isError={podFetch.isError}
             success1={podFetch.isSuccess}
             stat1={podFetch.data?.currentValue}
             integer={true}

@@ -538,12 +538,10 @@ Array [
         style={
           Object {
             "flex": "1",
-            "fontFamily": "Helvetica",
             "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b1",
             "textAlign": "center",
-            "textShadow": "1px 0px 1px",
           }
         }
       >
@@ -573,12 +571,10 @@ Array [
         style={
           Object {
             "flex": "1",
-            "fontFamily": "Helvetica",
             "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b2",
             "textAlign": "center",
-            "textShadow": "1px 0px 1px",
           }
         }
       >
@@ -608,12 +604,10 @@ Array [
         style={
           Object {
             "flex": "1",
-            "fontFamily": "Helvetica",
             "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b3",
             "textAlign": "center",
-            "textShadow": "1px 0px 1px",
           }
         }
       >
@@ -643,12 +637,10 @@ Array [
         style={
           Object {
             "flex": "1",
-            "fontFamily": "Helvetica",
             "fontSize": "17px",
             "fontWeight": "bold",
             "gridArea": "b4",
             "textAlign": "center",
-            "textShadow": "1px 0px 1px",
           }
         }
       >
