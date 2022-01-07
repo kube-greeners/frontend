@@ -1,4 +1,4 @@
-![Kube-green Logo](https://github.com/kube-greeners/frontend/blob/main/public/logo.png =250x250)
+![Kube-green Logo](https://github.com/kube-greeners/frontend/blob/main/public/logo.png){:height="400px" width="400px"}
 
 # Getting Started with Create React App
 
