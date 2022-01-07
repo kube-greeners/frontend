@@ -1,8 +1,6 @@
 
 <div id="top"></div>
 
-![Kube-green Logo](https://github.com/kube-greeners/frontend/blob/main/public/logo.png)
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -11,6 +9,8 @@
 
 <br />
 <div align="center">
+
+![Kube-green Logo](https://github.com/kube-greeners/frontend/blob/main/public/logo.png)
 
 <h3 align="center">kube-green Dashboard Frontend</h3>
 
