@@ -21,6 +21,23 @@ function LineChartCard({ dataFetching, currentlyShowing }) {
     color: "#666666",
   };
 
+  const content = !dataFetching.isError ? (
+    !dataFetching.isFetching && dataFetching.isSuccess ? (
+      dataFetching.data ? <LineChart data={dataFetching.data.historicalData} /> : "No data"
+    ) : (
+      <div
+        style={{
+          height: 500,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <LoadingSpinner />
+      </div>
+    )
+  ) : "Something went wrong"
+
   return (
     <Card
       style={{ gridArea: "lc" }}
@@ -36,20 +53,7 @@ function LineChartCard({ dataFetching, currentlyShowing }) {
         />
       }
     >
-      {!dataFetching.isFetching && dataFetching.isSuccess ? (
-        dataFetching.data ? <LineChart data={dataFetching.data.historicalData} /> : "No data"
-      ) : (
-        <div
-          style={{
-            height: 500,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <LoadingSpinner />
-        </div>
-      )}
+      {content}
     </Card>
   );
 }
