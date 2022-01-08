@@ -20,6 +20,10 @@ test("Properly converts date without timestamp", () => {
 
 test("Properly converts data", () => {
   expect(convertData(data, "Memory Usage")).toEqual(convertedData);
+  expect(convertData([], "null")).toEqual({
+    currentValue: null,
+    historicalData: null,
+  });
 });
 
 test("Properly extractes the namespace names", () => {
