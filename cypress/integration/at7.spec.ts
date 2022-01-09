@@ -1,3 +1,5 @@
+import {allQueries} from "../const";
+
 describe("Frontend", () => {
     it("should have the initial load completed before 3 seconds", () => {
         const start = new Date();
@@ -10,8 +12,7 @@ describe("Frontend", () => {
 
 describe("Backend queries", function () {
     it("queries should have an overhead less than 500ms", () => {
-        const queries = ["namespace_names", "saved_co2_emission", "co2_emission_with_kube_green", "cpu_allocation", "memory_usage", "memory_allocation", "all_active_pods", "cpu_usage"]
-        for (const query of queries) {
+        for (const query of allQueries) {
             cy.intercept("GET", Cypress.config("baseUrl") + `/${query}?*`, (req) => {
                 req.query["measure"] = "true";
                 const start = Number(new Date());
@@ -25,7 +26,7 @@ describe("Backend queries", function () {
             }).as(query);
         }
         cy.visit("/dev/");
-        for (const query of queries) {
+        for (const query of allQueries) {
             cy.wait("@" + query, {timeout: 60000});
         }
 

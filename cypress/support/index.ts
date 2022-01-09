@@ -27,7 +27,8 @@ declare global {
              * Custom command to select DOM element by data-cy attribute.
              * @example cy.dataCy('greeting')
              */
-            compareSnapshot(value: string): Chainable<Element>
+            compareSnapshot(value: string): Chainable<Element>;
+            cacheRequests(): Chainable<null>;
         }
     }
 }

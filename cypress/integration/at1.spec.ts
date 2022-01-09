@@ -7,6 +7,7 @@ describe("Initial dashboard view", () => {
         return {first: newScreenshotPath, second: oldScreenshotPath};
     }
     before(() => {
+        cy.cacheRequests();
         cy.visit(`dev`);
     });
     describe("contains all of its components", () => {
@@ -31,7 +32,7 @@ describe("Initial dashboard view", () => {
             it("should contain a dropdown specifying resource type", () => {
                 const screenshotName = "co2_y_axis"
 
-                cy.get("canvas", {timeout: 10000}).screenshot(screenshotName, {
+                cy.get("canvas", {timeout: 60000}).screenshot(screenshotName, {
                     overwrite: true,
                     clip: yAxisClipArea,
                 });

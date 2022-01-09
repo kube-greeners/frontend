@@ -1,5 +1,6 @@
 describe("selecting a namespace", () => {
     beforeEach(() => {
+        cy.cacheRequests();
         cy.visit("/dev/");
     });
     const switchNamespace = (name: string) => {

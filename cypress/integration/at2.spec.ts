@@ -34,6 +34,7 @@ describe("selecting a resource type for the diagram", () => {
         })
     }
     before(() => {
+        cy.cacheRequests();
         cy.visit(`dev`);
     });
 

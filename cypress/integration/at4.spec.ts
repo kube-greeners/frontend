@@ -7,6 +7,7 @@ const ready = () => {
 };
 describe("Time interval selector", () => {
     before(() => {
+        cy.cacheRequests();
         cy.visit("/dev/");
     })
     it("should consistently update the saved emissions", () => {
@@ -44,7 +45,7 @@ describe("Time interval selector", () => {
 
         cy.get("input[placeholder='End date']").focus().type("04/01/2022").trigger("keydown", {key: 13}).blur();
         ready();
-        cy.wait("@savedRequest");
+        cy.wait("@savedRequest", {timeout: 60000});
         cy.get("canvas", {timeout: 20000}).screenshot("new", {overwrite: true});
         cy.task("compareScreenshots", {first: old_canvas_path, second: new_canvas_path}).then(result => {
             expect(result).to.be.greaterThan(0.1);
@@ -54,6 +55,7 @@ describe("Time interval selector", () => {
 
 describe("Time interval graph slider", () => {
     before(() => {
+        cy.cacheRequests();
         cy.visit("/dev/");
     });
     it("should readjust the graph when changed", () => {
