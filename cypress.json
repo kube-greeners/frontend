@@ -1,0 +1,4 @@
+{
+  "baseUrl": "http://dev.dsd.ozyinc.com",
+  "responseTimeout": 60000
+}
