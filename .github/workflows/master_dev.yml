@@ -2,7 +2,7 @@ name: Upload frontend to K8S
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ main, dev ]
 
 jobs:
   build:
